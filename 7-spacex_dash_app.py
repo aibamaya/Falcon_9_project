@@ -74,9 +74,9 @@ def get_pie_chart(entered_site):
         return figure
     else:
         new_df = filtered_df['class'].value_counts().to_frame()
-        new_df['category'] = ['Failure', 'Success']
+#         new_df['category'] = ['Failure', 'Success']
         figure = px.pie(new_df, values='class', 
-                        names = 'category',
+                        names = new_df.index,
                         title = 'Total Success Launches for site ' + entered_site)
         return figure
         
